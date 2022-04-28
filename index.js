@@ -24,10 +24,8 @@ const run = async () => {
 
     // get all products from database
     app.get("/products", async (req, res) => {
-      console.log("query", req.query);
       const page = parseInt(req.query.page);
       const size = parseInt(req.query.size);
-      console.log(page, size);
       const query = {};
       let products;
       const cursor = productCollection.find(query);
@@ -56,7 +54,6 @@ const run = async () => {
       const cursor = productCollection.find(query);
       const products = await cursor.toArray();
 
-      console.log(keys);
       res.send(products);
     });
   } finally {
