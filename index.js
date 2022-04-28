@@ -61,11 +61,12 @@ const run = async () => {
   }
 };
 run().catch(console.dir);
+
 app.get("/", (req, res) => {
   res.send("Ema John is running");
 });
-app.listen(port, () => {
-  console.log("John is running on port", 5000);
+app.listen(port, (err) => {
+  console.log("John is running on port", 4500);
 });
 // username : ema-john
 // password : 1m1YAwvO09RIUMno
